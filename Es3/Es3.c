@@ -14,51 +14,51 @@ Ad esempio se l'energia spesa è di 450KWH il costo sarà:
 =       750
 */
 
-void CalcoloSpesa(int* consumo){
-    int costo_totale=0;
+int CalcoloSpesa(int* consumo,int* costo_totale){
+
     int consumo_restante=0;
 if(*consumo>=600){
     //composto da consumo tra 0-200, 201-400, 401-600,consumo-600
     consumo_restante=*consumo-600;
-    costo_totale=(1*200)+(2*200)+(3*200)+(4*consumo_restante);
-    printf("IL COSTO TOTALE E' %d",costo_totale);
+    *costo_totale=(1*200)+(2*200)+(3*200)+(4*consumo_restante);
+    printf("IL COSTO TOTALE E' %d",*costo_totale);
 
 }else{
     if(*consumo>=401&&*consumo<600)
     {
         //composto da consumo tra 0 200, 200 400, e consumo-400
         consumo_restante=*consumo-401;
-        costo_totale=(1*200)+(2*200)+(3*consumo_restante);
-        printf("IL COSTO TOTALE E' %d",costo_totale);
+        *costo_totale=(1*200)+(2*200)+(3*consumo_restante);
+        printf("IL COSTO TOTALE E' %d",*costo_totale);
     }
     else
     {   
         if(*consumo>=201&&*consumo<=400){
             //composto da consumo tra 0 e 200, e consumo-201
             consumo_restante=*consumo-201;
-            costo_totale=(1*200)+(2*consumo_restante);
-            printf("IL COSTO TOTALE E' %d",costo_totale);
+            *costo_totale=(1*200)+(2*consumo_restante);
+            printf("IL COSTO TOTALE E' %d",*costo_totale);
         }
         else{
             if(*consumo>=0&&*consumo<=200)
             {
                 //composto da consumo
-                costo_totale=*consumo;
-                printf("IL COSTO TOTALE E' %d",costo_totale);
+                *costo_totale=*consumo;
+                printf("IL COSTO TOTALE E' %d",*costo_totale);
             }
         }
     }
 }
-
+return *costo_totale;
 }
 
 
 int main(){
-    int consumo_kWh=0;
+    int consumo_kWh,spesa=0;
     printf("Inserire il numero di kWh consumati nell'ultimo mese:\n");
     scanf("%d",&consumo_kWh);
 
-    CalcoloSpesa(&consumo_kWh);
+    spesa=CalcoloSpesa(&consumo_kWh,&spesa);
 
     
 

@@ -13,7 +13,7 @@ Ad esempio se l'energia spesa è di 450KWH il costo sarà:
 50 Kwh*3= 150   +
 =       750
 */
-
+//RISOLTO CON LE SOMME E DIFFERENZE
 int CalcoloSpesa(int* consumo,int* costo_totale){
 
     int consumo_restante=0;
@@ -24,23 +24,23 @@ if(*consumo>=600){
     printf("IL COSTO TOTALE E' %d",*costo_totale);
 
 }else{
-    if(*consumo>=401&&*consumo<600)
+    if(*consumo>=400&&*consumo<600)
     {
         //composto da consumo tra 0 200, 200 400, e consumo-400
-        consumo_restante=*consumo-401;
+        consumo_restante=*consumo-400;
         *costo_totale=(1*200)+(2*200)+(3*consumo_restante);
         printf("IL COSTO TOTALE E' %d",*costo_totale);
     }
     else
     {   
-        if(*consumo>=201&&*consumo<=400){
+        if(*consumo>=200&&*consumo<400){
             //composto da consumo tra 0 e 200, e consumo-201
-            consumo_restante=*consumo-201;
+            consumo_restante=*consumo-200;
             *costo_totale=(1*200)+(2*consumo_restante);
             printf("IL COSTO TOTALE E' %d",*costo_totale);
         }
         else{
-            if(*consumo>=0&&*consumo<=200)
+            if(*consumo>=0&&*consumo<200)
             {
                 //composto da consumo
                 *costo_totale=*consumo;

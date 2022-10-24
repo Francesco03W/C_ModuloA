@@ -14,7 +14,7 @@ Un triangolo sarà coastruibile solamente se ogni suo lato è minore o  uguale d
 
 int disug_triang(int a, int b, int c)
 {
-    if(a<=b+c)
+    if(a<=b+c && b<=a+c && c<=a+b)
     {
         return 1;
     }

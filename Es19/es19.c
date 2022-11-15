@@ -13,11 +13,11 @@ usare gli array
 
 #include <stdio.h>
 
-void eliminaBambino(int bambini[],int n,int bambini_eliminati[],int dim_rimasti,int indice_rim)
+void eliminaBambino()
 {
 
-
-void consegnaRegalo(int bambini[],int n,int k)
+}
+void consegnaRegalo()
 {
    
 

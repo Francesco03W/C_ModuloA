@@ -12,31 +12,14 @@ usare gli array
 */
 
 #include <stdio.h>
-#include <string.h>
 
-void eliminaBambino(int bambini[],int new_bambini[],int n_dim,int indice_rim)
+void eliminaBambino(int bambini[],int n,int bambini_eliminati[],int dim_rimasti,int indice_rim)
 {
 
-}
 
 void consegnaRegalo(int bambini[],int n,int k)
 {
-    int jump=k-1;
-    int kid_index=0; //si parte dal primo bambino dell'array
-    int consegna=0;
-    while(consegna<n-1)
-    {
-        //indice di consegna regalo bambino
-        kid_index=kid_index+jump;
-        //devo saltare il/i bambini successivi
-        kid_index++; //considero il regalo del bambino di indice kid_index come già consegnato, quindi lo elimino e lo salto
-        //salterò anche i k-1 successivi, per dare al k-esimo il regalo
-
-        //EFFETTUO LA CONSEGNA
-        consegna++;
-
-    }
-    
+   
 
 
 }
@@ -45,12 +28,9 @@ int main()
 {
     int n;
     int k;
-    
-
 //lascio stare i controlli degli input, l'importante è l'algoritmo
     printf("inserire il numero di bambini\n");
     scanf("%d",&n);
-    
     
     printf("inserire valore di K\n");
     scanf("%d",&k);
@@ -62,11 +42,6 @@ int main()
         bambini[i]=i+1;
     }
     consegnaRegalo(bambini,n,k);
-
-    
-
-
-
 
     return 0;
 }
